@@ -2,28 +2,28 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1");
         int year = 2021;
-        vesokosYear(year);
+        isLeapYear(year);
         System.out.println("Задание 2");
         int clientOS = 0;
         int yearDevice = 2018;
         application(clientOS, yearDevice);
         System.out.println("Задание 3");
         int deliveryDistance = 95;
-        int dostavka = calcilationDayDelivery(deliveryDistance);
-        if (dostavka > 0) {
-            System.out.println("Потребуется дней:" + dostavka);
+        int deliveryDays = calculateDayDelivery(deliveryDistance);
+        if (deliveryDays > 0) {
+            System.out.println("Потребуется дней:" + deliveryDays);
         } else {
             System.out.println("Доставки нет");
         }
     }
 
-    public static void vesokosYear(int year) {
+    public static void isLeapYear(int year) {
         if (year % 4 != 0) {
-            System.out.println(year + " год - високосным");
+            System.out.println(year + " год - не является високосным");
         } else if (year % 100 != 0) {
             System.out.println(year + " год - високосный");
         } else if (year % 400 != 0) {
-            System.out.println(year + " год - високосным");
+            System.out.println(year + " год - не является високосным");
         } else {
             System.out.println(year + "год - високосный");
         }
@@ -31,7 +31,7 @@ public class Main {
     }
 
     public static void application(int clientOS, int yearDevice) {
-        int currentYear = 2024;
+        int currentYear = 2015;
         if (clientOS == 0 && yearDevice < currentYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         }
@@ -47,7 +47,7 @@ public class Main {
 
     }
 
-    public static int calcilationDayDelivery(int distans) {
+    public static int calculateDayDelivery(int distans) {
         int day = 0;
         if (distans < 21) {
             day = day + 1;
